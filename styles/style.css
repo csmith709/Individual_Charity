@@ -1,0 +1,260 @@
+/* google fonts - inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap');
+
+
+:root{
+    --first-color: #2e3b41;
+    --second-color: #368e84;
+    --third-color: #435154;
+    --text-color: #fff;
+    --fourth-color: #1c1c1c;
+
+    --box-shadow: 0 5px 25 rgb(2, 2, 2, 0.1);
+    --text-shadow: 0 5px 25 rgb(2, 2, 2, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.title-box{
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    background: var(--fourth-color);
+    color: var(--text-color);
+}
+.title-box h1{
+    font-family: "Inria Serif", serif;
+}
+
+body {
+    background: var(--first-color);
+}
+
+section {
+    position: relative;
+    margin: 0 80px;
+    transition: 0.5s ease
+}
+
+.main-container{
+    position: relative;
+}
+
+/* tab nav bar */
+.tab-nav-bar{
+    position: relative;
+    margin: 35px 10px 10px 10px;
+}
+
+.tab-navigation{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.tab-menu{
+    color: var(--text-color);
+    list-style: none;
+    background: var(--third-color);
+    max-width: 800px;
+    padding: 10px;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--third-color);
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+    overflow-x: auto;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+.tab-menu.dragging{
+    scroll-behavior: unset;
+    cursor: grab;
+}
+
+/* invisible scroll bar */
+.tab-menu::-webkit-scrollbar{
+    display: none;
+}
+
+.tab-btn{
+    color: var(--text-color);
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 2px;
+    padding: 10px 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3 ease;
+}
+
+.tab-menu.dragging .tab-btn{
+pointer-events: none;
+}
+
+.tab-btn:hover{
+    background: var(--first-color);
+}
+
+.tab-btn.active{
+    background: var(--second-color);
+}
+
+.left-btn, .right-btn{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 1.8em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left-btn{
+    left: 0;
+    background: linear-gradient(to left, transparent, var(--first-color) 88%);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: none;
+}
+
+.right-btn{
+    right: 0;
+    background: linear-gradient(to right, transparent, var(--first-color) 88%);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* tab content */
+#profilePic {
+    border-radius: 50%;
+    max-width: 275px;
+    padding: 20px 0;
+}
+
+#var{
+    max-width: 70%;
+    padding: 20px 0;
+}
+
+#images {
+    max-width: 100%;
+    padding: 20px 0;
+}
+
+.tab-content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tab{
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    max-width: 1100px;
+    padding: 5px 50px;
+    transform: translateX(25px);
+    content-visibility: hidden;
+    opacity: 0;
+}
+
+.tab.active{
+    transform: translateX(0);
+    content-visibility: visible;
+    opacity: 1;
+    transition: 1s ease;
+}
+
+.tab .row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    gap: 30px;
+}
+
+.tab .img-card{
+    position: relative;
+    width: 490px;
+    max-width: 490px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.tab .img-card img{
+    border-radius: 10px;
+    max-height: 520px;
+}
+
+.right-column{
+    max-width: 800px;
+}
+
+.info .title, .info .description p{
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.info .title{
+    font-size: 2em;
+}
+
+.company{
+    color: var(--third-color);
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+}
+
+.right-columnB{
+    max-width: 800px;
+    color: var(--text-color);
+}
+.left-columnB{
+    max-width: 800px;
+    color: var(--text-color);
+}
+
+.form{
+    width: 700px;
+    color: var(--text-color);
+}
+
+.social{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-size: 30pt;
+}
+
+.social a:link{
+    color: var(--text-color);
+}
+.social a:visited{
+    color: var(--text-color);
+}
+.social a:hover{
+    color: var(--fourth-color);
+    background-color: var(--text-color);
+}
